@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { DeleteDialogComponent } from 'src/app/delete-dialog/delete-dialog.component';
+import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
 import { v4 as uuidv4 } from 'uuid';
 import { ProductFormComponent } from '../../components/product-form/product-form.component';
 import { Product } from '../../models';

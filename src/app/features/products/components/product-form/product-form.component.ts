@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ValidationService } from 'src/app/services';
-import { CustomValidators } from 'src/app/validators';
+import { ValidationService } from 'src/app/shared/services';
+import { CustomValidators } from 'src/app/shared/validators';
 import { Product } from '../../models';
 
 @Component({
@@ -12,7 +12,7 @@ import { Product } from '../../models';
 export class ProductFormComponent implements OnInit {
   productForm!: FormGroup;
   mode: 'edit' | 'create';
-  
+
   constructor(
     private fb: FormBuilder,
     public matDialogRef: MatDialogRef<ProductFormComponent>,

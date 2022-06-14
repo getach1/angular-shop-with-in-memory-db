@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { DeleteDialogComponent } from 'src/app/delete-dialog/delete-dialog.component';
+import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
 import { ProductFormComponent } from '../../components/product-form/product-form.component';
 import { Product } from '../../models';
 import { ProductService } from '../../services/product.service';

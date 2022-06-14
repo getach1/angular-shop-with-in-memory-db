@@ -13,13 +13,13 @@ import { MatInputModule } from "@angular/material/input";
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { ProductsListComponent } from './features/products/pages/products-list/products-list.component';
-import { DataService } from './services/data/data.service';
+import { DataService } from './shared/services/data/data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductFormComponent } from './features/products/components/product-form/product-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ProductDetailComponent } from './features/products/pages/product-detail/product-detail.component';
-import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-dialog.component';
 import { ProductItemComponent } from './features/products/components/product-item/product-item.component';
 
 @NgModule({
