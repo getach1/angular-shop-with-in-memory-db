@@ -1,6 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MatCardModule } from "@angular/material/card";
+import { MatIconModule } from "@angular/material/icon";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +20,14 @@ import { DataService } from './services/data/data.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    InMemoryWebApiModule.forRoot(DataService)
+
+    HttpClientModule,
+
+    // material
+    MatCardModule,
+    MatIconModule,
+    InMemoryWebApiModule.forRoot(DataService),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

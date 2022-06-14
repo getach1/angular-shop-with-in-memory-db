@@ -5,5 +5,6 @@ export interface Item {
   discount: number,
   shippingFee: number,
   stock: number,
-  imageUrls: string[]
+  imageUrls: string[],
+  ratedByCount: number;
 }

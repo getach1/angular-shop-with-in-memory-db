@@ -1,1 +1,11 @@
-<item></item>
+<ng-container *ngIf="items$ | async as items; else noItems">
+  <!-- <div
+    class="flex flex-row flex-wrap items-center flex-grow last:flex-shrink w-11/12 gap-3 p-8 my-8 mx-auto"
+  > -->
+  <div
+    class="my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-10/12 mx-auto min-w-0"
+  >
+    <item [item]="item" *ngFor="let item of items"></item>
+  </div>
+</ng-container>
+<ng-template #noItems> There are no items yet </ng-template>

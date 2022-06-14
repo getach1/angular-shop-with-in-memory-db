@@ -1,5 +1,25 @@
-<div class="item-container">
-    <h4>{{item.name}}</h4>
-    <h4>{{item.rating}}</h4>
-    <h4>{{item.discount}}</h4>
-</div>
+<mat-card class="bg-white p-0 w-full cursor-pointer hover:bg-slate-100">
+  <img src="{{ item.imageUrls[0] }}" class="w-full" />
+  <mat-card-content class="text-black">
+    <a
+      routerLink="item-detail"
+      class="text-black hover:underline visited:text-purple-400"
+      >{{
+        item.name.split("").length > 50
+          ? item.name.slice(0, 50) + "..."
+          : item.name
+      }}</a
+    >
+    <div class="flex flex-row items-center">
+      <mat-icon class="mat-18" *ngFor="let i of [0, 1, 2, 3, 4]">{{
+        item.rating >= i + 1
+          ? "star"
+          : item.rating > i
+          ? "star_half"
+          : "star_border"
+      }}</mat-icon>
+      <span *ngIf="item.ratedByCount > 0"> ({{ item.ratedByCount }}) </span>
+    </div>
+    <h5 class="font-semibold">{{ item.price | currency: "ETB" }}</h5>
+  </mat-card-content>
+</mat-card>
