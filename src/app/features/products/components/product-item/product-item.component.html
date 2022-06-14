@@ -1,7 +1,4 @@
-<mat-card
-  [routerLink]="[product.id]"
-  class="bg-white p-0 w-full cursor-pointer hover:bg-slate-100"
->
+<mat-card class="bg-white p-0 w-full cursor-pointer hover:bg-slate-100">
   <div class="flex flex-row content-end w-7/12 m-auto gap-10">
     <button class="ml-auto" mat-icon-button (click)="edit(product)">
       <mat-icon color="primary" class="mat-18">edit</mat-icon>
@@ -10,7 +7,11 @@
       <mat-icon color="warn" class="mat-18">delete</mat-icon>
     </button>
   </div>
-  <img src="{{ product.imageUrl }}" class="w-full" />
+  <img
+    [routerLink]="[product.id]"
+    src="{{ product.imageUrl }}"
+    class="w-full"
+  />
   <mat-card-content class="text-black mx-3 my-6">
     <a
       [routerLink]="[product.id]"
