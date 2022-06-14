@@ -1,0 +1,39 @@
+<ng-container *ngIf="product$ | async as product; else notFound">
+  <div class="flex-col flex content-center items-center my-20">
+    <div class="flex flex-row w-7/12 m-auto bg-white products-center">
+      <img class="w-1/2" src="{{ product.imageUrl }}" />
+      <div class="flex flex-col">
+        <h3 class="font-semibold">{{ product.name }}</h3>
+        <p>Price: {{ product.price | currency: "ETB" }}</p>
+        <p>Shipping Fee: {{ product.shippingFee | currency: "ETB" }}</p>
+        <p *ngIf="product.discount > 0" class="text-green-500">
+          Discount: {{ product.discount | percent }}
+        </p>
+        <p>Stock: {{ product.stock }}</p>
+      </div>
+    </div>
+    <div class="flex flex-row content-end m-auto gap-10">
+      <button
+        class="ml-auto"
+        color="primary"
+        mat-raised-button
+        (click)="openEditDialog(product)"
+      >
+        <mat-icon class="mat-18">edit</mat-icon> Edit
+      </button>
+      <button
+        color="warn"
+        mat-raised-button
+        (click)="openDeleteDialog(product)"
+      >
+        <mat-icon class="mat-18">delete</mat-icon> Delete
+      </button>
+    </div>
+  </div>
+</ng-container>
+<ng-template #notFound>
+  <h2>
+    We couldn't get this product,
+    <span routerLink=".." class="text-green-500 cursor-pointer">Go Back</span>
+  </h2>
+</ng-template>

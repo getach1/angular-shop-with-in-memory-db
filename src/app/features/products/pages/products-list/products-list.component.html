@@ -1,0 +1,27 @@
+<ng-container *ngIf="products$ | async as products; else noProducts">
+  <!-- <div
+    class="flex flex-row flex-wrap products-center flex-grow last:flex-shrink w-11/12 gap-3 p-8 my-8 mx-auto"
+  > -->
+  <div class="flex flex-col w-10/12 mx-auto my-10">
+    <div class="flex flex-row content-end ml-auto">
+      <button
+        (click)="openAddProductDialog()"
+        mat-raised-button
+        class="bg-green-500 text-white"
+      >
+        <mat-icon class="mat-18">add</mat-icon>Add Product
+      </button>
+    </div>
+    <div
+      class="my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 min-w-0"
+    >
+      <product-item
+        (deleteEvent)="openDeleteDialog(product)"
+        (editEvent)="openEditDialog(product)"
+        [product]="product"
+        *ngFor="let product of products"
+      ></product-item>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noProducts> There are no products yet </ng-template>

@@ -1,0 +1,16 @@
+<div class="w-full max-w-lg max-h-screen">
+  <mat-toolbar color="warn" class="mb-2 h-12 w-full">
+    <span class="mr-auto">Delete</span>
+    <button mat-dialog-close mat-icon-button class="ml-auto">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="flex flex-col mx-3 my-5">
+    <div class="text-md font-bold">{{ title }} will be deleted!</div>
+    Are you sure to continue?
+  </div>
+  <div class="flex flex-row gap-10 mx-3 mb-10 justify-end">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button (click)="delete()" mat-raised-button color="warn">Delete</button>
+  </div>
+</div>

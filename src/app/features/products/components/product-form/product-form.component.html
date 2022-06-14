@@ -1,0 +1,71 @@
+<div class="w-full max-w-lg max-h-screen overflow-y-auto">
+  <mat-toolbar color="primary" class="w-full flex flex-row content-between">
+    <span class="mr-auto"
+      >{{ mode === "create" ? "New" : "Update" }} Product
+    </span>
+    <button (click)="closeDialog()" mat-icon-button class="ml-auto">
+      <mat-icon class="text-white">close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <form
+    [formGroup]="productForm"
+    class="w-full p-6 flex flex-col flex-auto sm:p-8 overflow-y-auto"
+  >
+    <div class="flex flex-wrap -mx-3">
+      <mat-form-field class="w-full">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" />
+        <mat-error>{{ getErrorMessage("name") }}</mat-error>
+      </mat-form-field>
+      <!-- row -->
+      <div class="my-5 grid grid-cols-1 sm:grid-cols-2 gap-6 min-w-0">
+        <mat-form-field class="w-full">
+          <mat-label>Price</mat-label>
+          <input matInput formControlName="price" type="number" />
+          <mat-error>{{ getErrorMessage("price") }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>discount</mat-label>
+          <input matInput formControlName="discount" type="number" />
+          <mat-error>{{ getErrorMessage("discount") }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Shipping Fee</mat-label>
+          <input matInput formControlName="shippingFee" type="number" />
+          <mat-error>{{ getErrorMessage("shippingFee") }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Stock</mat-label>
+          <input matInput formControlName="stock" type="number" />
+          <mat-error>{{ getErrorMessage("stock") }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="w-full">
+        <mat-label>Image urls</mat-label>
+        <input matInput formControlName="imageUrl" type="url" />
+        <mat-error>{{ getErrorMessage("imageUrl") }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-row w-full gap-10 content-end">
+      <button
+        (click)="closeDialog()"
+        class="ml-auto lg:order-first mr-4"
+        mat-raised-button
+      >
+        Cancel
+      </button>
+
+      <button
+        [disabled]="!productForm?.touched || productForm?.invalid"
+        (click)="submit()"
+        mat-raised-button
+        color="primary"
+        class="lg:order-last"
+      >
+        {{ mode === "create" ? "Create" : "Save" }}
+      </button>
+    </div>
+  </form>
+</div>

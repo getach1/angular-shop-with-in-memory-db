@@ -1,12 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { APIService } from "src/app/services/api/api.service";
-import { Item } from "../models";
+import { Product } from "../models";
 
 @Injectable({ providedIn: 'root' })
-export class ItemService extends APIService<Item>
+export class ProductService extends APIService<Product>
 {
   constructor(httpClient: HttpClient) {
-    super(httpClient, 'items');
+    super(httpClient, 'products');
   }
 }

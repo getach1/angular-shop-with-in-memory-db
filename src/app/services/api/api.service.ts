@@ -20,22 +20,22 @@ export abstract class APIService<T> {
   getAll(): Observable<T[]> {
     return this.http.get<T[]>(urlJoin(this.apiUrl, this.endpoint))
   }
-  get(id: number): Observable<T> {
+  get(id: string): Observable<T> {
     return this.http.get<T>(urlJoin(this.apiUrl, this.endpoint, `${id}`));
   }
 
-  create(item: T): Observable<T> {
-    return this.http.post<T>(urlJoin(this.apiUrl, this.endpoint), item);
+  create(product: T): Observable<T> {
+    return this.http.post<T>(urlJoin(this.apiUrl, this.endpoint), product);
   }
 
-  patch(id: number, item: Partial<T>): Observable<T> {
+  patch(id: string, product: Partial<T>): Observable<T> {
     return this.http.put<T>(
       urlJoin(this.apiUrl, this.endpoint, `${id}`),
-      item,
+      product,
     );
   }
 
-  delete(id: number): Observable<T> {
+  delete(id: string): Observable<T> {
     return this.http.delete<T>(
       urlJoin(this.apiUrl, this.endpoint, `${id}`),
     );
