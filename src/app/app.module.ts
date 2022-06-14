@@ -50,6 +50,7 @@ import { ProductItemComponent } from './features/products/components/product-ite
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
+    MatToolbarModule,
 
 
     // third party
